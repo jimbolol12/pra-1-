@@ -40,21 +40,53 @@
                     <p>Twijfel jij nog welke studie het beste bij jou past? <br>Laat je op goede ideeën brengen tijdens een open dag op het mbo. <br>Studenten en leraren vertellen je dan alles over hun opleiding. <br>Kijk mee bij meerdere studies en stel al jouw vragen. Neem ook je ouders/verzorgers mee. Meld je aan en blijf op de hoogte.</p>
                     
                     <div class="tab-titles">
-                        <p class="tab-links active-link">Skills</p>
-                        <p class="tab-links">Ervaring</p>
-                        <p class="tab-links">opleiding</p>
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('ervaring')">Ervaring</p>
+                        <p class="tab-links" onclick="opentab('opleiding')">Opleiding</p>
                     </div>
-                    <div class="tab-contents">
+                    <div class="tab-contents active-tab" id="skills">
                         <ul>
-                            <li><span>UI?UX</span><br>Schoolen voor de open dagen bezoeken </li>
-                            <li><span>Keuzes Maken</span><br>Schoolen voor de open dagen bezoeken </li>
+                            <li><span>Na de oplijding</span><br>ICT- bedrijven, Development-bureau s, Software development-bedrijven,Software consultancy-ondernemingen </li>
+                            <li><span>Keuzedelen</span><br>Naast het basis- en profieldeel van je opleiding volg je ook keuzedelen.</li>
                             <li><span>Locaties bezoeken</span><br>Schoolen voor de open dagen bezoeken </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="ervaring">
+                        <ul>
+                            <li><span>schooljaar 2022-2023 (BOL)</span><br>€ 1.239 </li>
+                            <li><span>schooljaar 2022-2023 (BBL niveau 3/4)</span><br>€ 624 </li>
+                            <li><span>Locaties bezoeken</span><br>Dit is een verplicht onderdeel van elke opleiding </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="opleiding">
+                        <ul>
+                            <li><span>extra vakken</span><br>Voorbereiding HBO wiskunde voor de techniek </li>
+                            <li><span>Keuzes Maken</span><br>Inleiding geo-informatie </li>
+                            <li><span>Frontend development</span><br>Mobile application development </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+
+    </script>
     
 </body>
 </html>
